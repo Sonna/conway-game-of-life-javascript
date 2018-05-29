@@ -19,12 +19,10 @@
   "license": "ISC",
   "homepage": "https://github.com/Sonna/conway-game-of-life-javascript#readme",
   "devDependencies": {
-    "jasmine": "^2.6.0",
-    "jsdom": "^11.0.0",
-    "nock": "^9.0.13",
-    "xmlhttprequest": "^1.8.0"
+    "jasmine": "^2.99.0",
+    "jsdom": "^11.11.0"
   },
   "dependencies": {
-    "request": "^2.81.0"
+    "request": "^2.87.0"
   }
 }
