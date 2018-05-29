@@ -1,4 +1,4 @@
-const GameCanvas = require('./lib/components/GameCanvas');
+const Game = require('./lib/components/Game');
 
 const AGRV = process.argv;
 
@@ -11,17 +11,17 @@ function consoleRender(component, location) {
 }
 
 function initialize(event) {
-  var gameCanvas = new GameCanvas({ renderOutput: 'console' });
+  var game = new Game({ renderOutput: 'console' });
 
   if (AGRV.length > 2 && AGRV[2] !== "") {
-    gameCanvas.seedCells(AGRV[2]);
+    game.seedCells(AGRV[2]);
   } else {
-    gameCanvas.randomizeCells();
+    game.randomizeCells();
   }
 
-  consoleRender(gameCanvas, null);
-  gameCanvas._handleRunOrPause();
-  // gameCanvas.setState({ running: true });
+  consoleRender(game, null);
+  game._handleRunOrPause();
+  // game.setState({ running: true });
 };
 
 (function () {

@@ -9,9 +9,9 @@ function domRender(component, location) {
 }
 
 function initialize(event) {
-  var gameCanvas = new GameCanvas();
+  var game = new Game();
 
-  domRender(gameCanvas, document.getElementById('main'));
+  domRender(game, document.getElementById('main'));
 };
 
 (function () {
