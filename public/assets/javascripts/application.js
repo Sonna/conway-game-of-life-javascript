@@ -9,9 +9,9 @@ function domRender(component, location) {
 }
 
 function initialize(event) {
-  var search = new GameCanvas();
+  var gameCanvas = new GameCanvas();
 
-  domRender(search, document.getElementById('main'));
+  domRender(gameCanvas, document.getElementById('main'));
 };
 
 (function () {
