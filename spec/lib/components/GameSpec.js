@@ -2378,4 +2378,97 @@ describe('Game component', function () {
       done();
     });
   });
+
+  describe('spaceship patterns', function () {
+    it('glider', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        columns: 4,
+        rows: 4
+      });
+      subject.seedCells(
+        '.*..\n' +
+        '..*.\n' +
+        '***.\n' +
+        '....\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '....\n' +
+        '*.*.\n' +
+        '.**.\n' +
+        '.*..\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '....\n' +
+        '..*.\n' +
+        '*.*.\n' +
+        '.**.\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '....\n' +
+        '.*..\n' +
+        '..**\n' +
+        '.**.\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '....\n' +
+        '..*.\n' +
+        '...*\n' +
+        '.***\n'
+      );
+      done();
+    });
+
+    it('lightweight spaceship', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        columns: 7,
+        rows: 5
+      });
+      subject.seedCells(
+        '.**....\n' +
+        '****...\n' +
+        '**.**..\n' +
+        '..**...\n' +
+        '.......\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '*..*...\n' +
+        '....*..\n' +
+        '*...*..\n' +
+        '.****..\n' +
+        '.......\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '.......\n' +
+        '...**..\n' +
+        '.**.**.\n' +
+        '.****..\n' +
+        '..**...\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '.......\n' +
+        '..****.\n' +
+        '.*...*.\n' +
+        '.....*.\n' +
+        '.*..*..\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '...**..\n' +
+        '..****.\n' +
+        '..**.**\n' +
+        '....**.\n' +
+        '.......\n'
+      );
+      done();
+    });
+  });
 });
