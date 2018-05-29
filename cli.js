@@ -20,7 +20,7 @@ function initialize(event) {
   }
 
   consoleRender(game, null);
-  game._handleRunOrPause();
+  game.runOrPause();
   // game.setState({ running: true });
 };
 
