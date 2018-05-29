@@ -1773,4 +1773,112 @@ describe('Game component', function () {
       done();
     });
   });
+
+  describe('still life patterns', function () {
+    it('block', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        columns: 4,
+        rows: 4
+      });
+      subject.seedCells(
+        '....\n' +
+        '.**.\n' +
+        '.**.\n' +
+        '....\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '....\n' +
+        '.**.\n' +
+        '.**.\n' +
+        '....\n'
+      );
+      done();
+    });
+
+    it('beehive', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        columns: 4,
+        rows: 4
+      });
+      subject.seedCells(
+        '.**.\n' +
+        '*..*\n' +
+        '*..*\n' +
+        '.**.\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '.**.\n' +
+        '*..*\n' +
+        '*..*\n' +
+        '.**.\n'
+      );
+      done();
+    });
+
+    it('loaf', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        columns: 4,
+        rows: 4
+      });
+      subject.seedCells(
+        '.**.\n' +
+        '*..*\n' +
+        '.*.*\n' +
+        '..*.\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '.**.\n' +
+        '*..*\n' +
+        '.*.*\n' +
+        '..*.\n'
+      );
+      done();
+    });
+
+    it('boat', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        columns: 3,
+        rows: 3
+      });
+      subject.seedCells(
+        '**.\n' +
+        '*.*\n' +
+        '.*.\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '**.\n' +
+        '*.*\n' +
+        '.*.\n'
+      );
+      done();
+    });
+
+    it('tub', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        columns: 3,
+        rows: 3
+      });
+      subject.seedCells(
+        '.*.\n' +
+        '*.*\n' +
+        '.*.\n'
+      );
+      subject.updateCells();
+      expect(subject.render()).toEqual(
+        '.*.\n' +
+        '*.*\n' +
+        '.*.\n'
+      );
+      done();
+    });
+  });
 });
