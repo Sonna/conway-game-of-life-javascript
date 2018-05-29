@@ -1,6 +1,3 @@
-// const jsdom = require("jsdom");
-// const JSDOM = jsdom.JSDOM;
-
 const GameCanvas = require('./lib/components/GameCanvas');
 
 const AGRV = process.argv;
@@ -28,10 +25,6 @@ function initialize(event) {
 };
 
 (function () {
-  // window = (new JSDOM('<html><head></head><body><section id="main"></section></body></html>')).window;
-  // global.window = window;
-  // global.document = window.document;
-
   initialize();
 })();
 
