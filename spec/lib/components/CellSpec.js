@@ -38,4 +38,26 @@ describe('Cell component', function () {
       done();
     });
   });
+
+  describe('render as String', function () {
+    it('when alive', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        alive: true
+      });
+
+      expect(subject.render()).toEqual('*');
+      done();
+    });
+
+    it('when dead', function (done) {
+      let subject = new describedClass({
+        renderOutput: 'console',
+        alive: false
+      });
+
+      expect(subject.render()).toEqual('.');
+      done();
+    });
+  });
 });
